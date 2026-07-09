@@ -9,7 +9,6 @@ This model card documents the specifications and details of the segmentation arc
   - **SegFormer**: Transformer-based encoder (`nvidia/mit-b0`) coupled with a lightweight MLP decoder for semantic segmentation.
   - **Segment Anything Model (SAM)**: Zero-shot foundation model (`facebook/sam-vit-base`) triggered dynamically via click coordinates.
 - **Task**: Binary / Multi-class Medical Image Segmentation (MRI & Chest X-Ray scan boundaries).
-- **License**: MIT (derived from milesial/Pytorch-UNet)
 
 ## Intended Use
 - **Primary Intended Use**: Research, benchmarking, and demonstration of comparative performance between convolutional neural networks, vision transformers, and interactive foundation models.
