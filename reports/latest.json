@@ -1,0 +1,27 @@
+{
+    "project": "VisionGuard AI",
+    "timestamp": "2026-07-09T09:43:36.095191Z",
+    "status": "not_run",
+    "hardware": {
+        "os": "Darwin",
+        "cpu": "Apple M3",
+        "ram_gb": 8,
+        "gpu": "Apple Metal (MPS)"
+    },
+    "environment": {
+        "python": "3.12.7",
+        "torch": "2.12.1"
+    },
+    "metadata": {
+        "model": "U-Net",
+        "parameters_million": 31.0,
+        "dataset": "Synthetic Brain MRI",
+        "batch_size": 1,
+        "image_size": 256,
+        "sequence_length": null,
+        "device": "cpu"
+    },
+    "benchmarks": {},
+    "reason": "Missing required dependencies: onnxruntime, transformers, albumentations",
+    "required_dependency": "onnxruntime"
+}

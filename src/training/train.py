@@ -16,7 +16,7 @@ from src.models.unet import UNet
 from src.models.segformer import SegFormerWrapper
 from src.training.eval import evaluate
 from src.utils.dice_score import dice_loss
-from src.utils.logging import setup_logger
+from src.utils.logger import setup_logger
 
 logger = setup_logger("train", "train.log")
 

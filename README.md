@@ -149,10 +149,9 @@ make test
 
 Below is a latency comparison running U-Net inference on a single CPU thread (Batch Size = 1, Resolution = 256x256):
 
-| Runtime Engine | Device | Average Latency (ms) | Throughput (FPS) | Speedup Factor |
-| :--- | :--- | :---: | :---: | :---: |
-| **PyTorch FP32** | CPU | 115.42 ms | 8.66 | 1.00x |
-| **ONNX Runtime (Optimized)** | CPU | 38.65 ms | 25.87 | **2.98x Faster** |
+<!-- BENCHMARK_TABLE_START -->
+*Benchmark Not Run: Missing required dependencies: onnxruntime, transformers, albumentations*
+<!-- BENCHMARK_TABLE_END -->
 
 ---
 
