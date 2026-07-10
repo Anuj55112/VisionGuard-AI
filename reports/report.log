@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.6)  9 JUL 2026 15:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.6)  11 JUL 2026 02:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -465,22 +465,90 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 34.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr
 /local/texlive/2026/texmf-dist/fonts/enc/dvips/base/8r.enc}]
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 8
+8.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+) [2]
+Overfull \hbox (5.39928pt too wide) in paragraph at lines 114--114
+[]\OT1/pcr/m/n/11 +-----------------------------+                 +------------
+-----------------+[] 
+ []
+
+
+Overfull \hbox (5.39928pt too wide) in paragraph at lines 114--114
+[]\OT1/pcr/m/n/11 |        DoubleConv           |                 |            
+Down             |[] 
+ []
+
+
+Overfull \hbox (5.39928pt too wide) in paragraph at lines 114--114
+[]\OT1/pcr/m/n/11 |  (Conv3x3 -> BatchNorm ->   |                 |    (MaxPool
+2d ->            |[] 
+ []
+
+
+Overfull \hbox (5.39928pt too wide) in paragraph at lines 114--114
+[]\OT1/pcr/m/n/11 |   ReLU -> Conv3x3 ->        |                 |     DoubleC
+onv)             |[] 
+ []
+
+
+Overfull \hbox (5.39928pt too wide) in paragraph at lines 114--114
+[]\OT1/pcr/m/n/11 |   BatchNorm -> ReLU)        |                 +------------
+-----------------+[] 
+ []
+
+
+Overfull \hbox (5.39928pt too wide) in paragraph at lines 114--114
+[]\OT1/pcr/m/n/11 +-----------------------------+                 +------------
+-----------------+[] 
+ []
+
+
+Overfull \hbox (5.39928pt too wide) in paragraph at lines 114--114
+[]\OT1/pcr/m/n/11 |          OutConv            |                 |            
+ Up              |[] 
+ []
+
+
+Overfull \hbox (5.39928pt too wide) in paragraph at lines 114--114
+[]\OT1/pcr/m/n/11 |   (Conv2d 1x1 classifier)   |                 |    (Upsampl
+e/ConvTranspose  |[] 
+ []
+
+
+Overfull \hbox (5.39928pt too wide) in paragraph at lines 114--114
+[]\OT1/pcr/m/n/11 |                             |                 |     -> Conc
+at ->            |[] 
+ []
+
+
+Overfull \hbox (5.39928pt too wide) in paragraph at lines 114--114
+[]\OT1/pcr/m/n/11 |                             |                 |     DoubleC
+onv)             |[] 
+ []
+
+
+Overfull \hbox (5.39928pt too wide) in paragraph at lines 114--114
+[]\OT1/pcr/m/n/11 +-----------------------------+                 +------------
+-----------------+[] 
+ []
+
 (/usr/local/texlive/2026/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
-)
-LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 8
-1.
+) [3]
+LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 1
+49.
 
 (/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <11> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 81.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[2] [3] (reports/report.aux)
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 149.
+ [4]
+(reports/report.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -492,17 +560,17 @@ Package rerunfilecheck Warning: File `report.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `report.out':
-(rerunfilecheck)             Before: 636BDEA7CDB12BD2B7816D3928A330E7;881
-(rerunfilecheck)             After:  EA4D5991FEEC6C7111FFE0013A95CF14;1972.
+(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
+(rerunfilecheck)             After:  5C1293CADEE337667ECB8711A87AB249;2836.
  ) 
 Here is how much of TeX's memory you used:
- 12365 strings out of 467525
- 187808 string characters out of 5418983
- 793169 words of memory out of 5000000
- 41100 multiletter control sequences out of 15000+600000
- 670643 words of font info for 123 fonts, out of 8000000 for 9000
+ 12408 strings out of 467525
+ 188435 string characters out of 5418983
+ 801604 words of memory out of 5000000
+ 41128 multiletter control sequences out of 15000+600000
+ 671158 words of font info for 125 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,8n,79p,1045b,1441s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,8n,79p,1045b,2066s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 ></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
@@ -510,13 +578,14 @@ usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
 r/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/l
 ocal/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/lo
 cal/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/loca
-l/texlive/2026/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/
-2026/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2026/texmf
--dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on reports/report.pdf (3 pages, 123587 bytes).
+l/texlive/2026/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texliv
+e/2026/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2026/tex
+mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2026/texmf-dist/fo
+nts/type1/urw/times/utmri8a.pfb>
+Output written on reports/report.pdf (4 pages, 141807 bytes).
 PDF statistics:
- 129 PDF objects out of 1000 (max. 8388607)
+ 132 PDF objects out of 1000 (max. 8388607)
  102 compressed objects within 2 object streams
- 35 named destinations out of 1000 (max. 500000)
- 49 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 45 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

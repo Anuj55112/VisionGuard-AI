@@ -70,6 +70,74 @@ where $Z$ is the height $\times$ width of the feature map. We then compute a wei
 L_{\text{Grad-CAM}}^c = \text{ReLU}\left( \sum_{k} \alpha_k^c A^k \right)
 \end{equation}
 
+\section{System Architecture \& Class Diagrams}
+The internal code structure implements a highly decoupled class pattern, separating the inference runtime from the data transformation layers.
+
+\subsection{System Sequence Flow}
+The dynamic flow of data through the segmentation pipeline follows a linear process:
+\begin{enumerate}
+    \item **Client Input**: A raw multipart medical image is submitted via the `/predict` FastAPI endpoint.
+    \item **Pre-processing Block**: The image is decoded and scaled to a normalized $256 \times 256$ matrix.
+    \item **Model Selector**: Directs the processed tensor to the selected model (U-Net, SegFormer, or SAM).
+    \item **Explainability Hook**: If Grad-CAM is active, the gradients are captured during the forward pass.
+    \item **Response Assembler**: Merges predictions and saliency maps to compile the final visual binary overlays.
+\end{enumerate}
+
+\subsection{U-Net Class Structural Map}
+The U-Net model in `src/models/unet.py` is defined hierarchically using custom modules:
+\begin{verbatim}
++--------------------------------------------------------------+
+|                          UNet Class                          |
+|  - in_channels: int                                          |
+|  - num_classes: int                                          |
++--------------------------------------------------------------+
+|  + __init__(in_channels, num_classes, bilinear: bool)       |
+|  + forward(x: Tensor) -> Tensor                              |
++--------------------------------------------------------------+
+                               |
+       +-----------------------+-----------------------+
+       |                                               |
+       v                                               v
++-----------------------------+                 +-----------------------------+
+|        DoubleConv           |                 |            Down             |
+|  (Conv3x3 -> BatchNorm ->   |                 |    (MaxPool2d ->            |
+|   ReLU -> Conv3x3 ->        |                 |     DoubleConv)             |
+|   BatchNorm -> ReLU)        |                 +-----------------------------+
++-----------------------------+                                |
+                                                               v
++-----------------------------+                 +-----------------------------+
+|          OutConv            |                 |             Up              |
+|   (Conv2d 1x1 classifier)   |                 |    (Upsample/ConvTranspose  |
+|                             |                 |     -> Concat ->            |
+|                             |                 |     DoubleConv)             |
++-----------------------------+                 +-----------------------------+
+\end{verbatim}
+
+\section{Model Hyperparameters \& Tensor Dimensions}
+To guarantee full reproducibility, the model configurations are specified as follows:
+\begin{itemize}
+    \item \textbf{Input Image Size}: $256 \times 256$ pixels.
+    \item \textbf{Tensor Dimensions}:
+    \begin{itemize}
+        \item Input Tensor Shape: $[B, 1, 256, 256]$ where $B$ is the batch size.
+        \item Encoder Contracting States:
+        \begin{itemize}
+            \item Block 1 Output: $[B, 64, 256, 256]$
+            \item Block 2 Output: $[B, 128, 128, 128]$
+            \item Block 3 Output: $[B, 256, 64, 64]$
+            \item Block 4 Output: $[B, 512, 32, 32]$
+        \end{itemize}
+        \item Decoder Expanding States:
+        \begin{itemize}
+            \item Block 1 Output: $[B, 256, 64, 64]$
+            \item Block 2 Output: $[B, 128, 128, 128]$
+            \item Block 3 Output: $[B, 64, 256, 256]$
+        \end{itemize}
+        \item Final Output Prediction Map Shape: $[B, 2, 256, 256]$ representing logit classifications for background vs. target segmentation regions.
+    \end{itemize}
+    \item \textbf{Optimizer Config}: Adam optimizer with learning rate $\eta = 1e-4$ and weight decay coefficient $\lambda = 1e-8$.
+\end{itemize}
+
 \section{Runtime Compilations \& Optimization}
 To optimize U-Net CPU execution, we export the PyTorch model to ONNX format. The model's symbolic graph is compiled using constant folding, which pre-calculates static nodes during compilation. Furthermore, dynamic axes are specified for batch dimensions to allow varying batch sizes:
 \begin{lstlisting}[language=Python]
