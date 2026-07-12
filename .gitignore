@@ -7,3 +7,6 @@ checkpoints/
 venv/
 .idea/
 wandb/
+
+# Ignore local reports
+reports/
